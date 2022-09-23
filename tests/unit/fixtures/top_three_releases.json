@@ -1,0 +1,20 @@
+{
+  "v2.9.0": {
+    "total": 491,
+    "installed": 369,
+    "error": 92,
+    "cancelled": 30
+  },
+  "v2.8.1": {
+    "total": 320,
+    "installed": 254,
+    "error": 43,
+    "cancelled": 23
+  },
+  "v2.7.0": {
+    "total": 480,
+    "installed": 375,
+    "error": 80,
+    "cancelled": 25
+  }
+}

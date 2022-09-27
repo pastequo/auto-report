@@ -1,0 +1,267 @@
+{
+  "took": 19,
+  "timed_out": false,
+  "_shards": {
+    "total": 19,
+    "successful": 19,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 2472,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "releases": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "v2.4.4",
+          "doc_count": 11,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 7,
+                "unique_count": {
+                  "value": 7
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 4,
+                "unique_count": {
+                  "value": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.5.0",
+          "doc_count": 93,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 59,
+                "unique_count": {
+                  "value": 59
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 18,
+                "unique_count": {
+                  "value": 14
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 16,
+                "unique_count": {
+                  "value": 13
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.5.1",
+          "doc_count": 61,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 40,
+                "unique_count": {
+                  "value": 40
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 13,
+                "unique_count": {
+                  "value": 13
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 8,
+                "unique_count": {
+                  "value": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.5.2",
+          "doc_count": 588,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 410,
+                "unique_count": {
+                  "value": 410
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 126,
+                "unique_count": {
+                  "value": 99
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 52,
+                "unique_count": {
+                  "value": 43
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.6.0",
+          "doc_count": 386,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 270,
+                "unique_count": {
+                  "value": 270
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 86,
+                "unique_count": {
+                  "value": 66
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 30,
+                "unique_count": {
+                  "value": 28
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.7.0",
+          "doc_count": 491,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 375,
+                "unique_count": {
+                  "value": 375
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 91,
+                "unique_count": {
+                  "value": 80
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 25,
+                "unique_count": {
+                  "value": 25
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.8.1",
+          "doc_count": 329,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 254,
+                "unique_count": {
+                  "value": 254
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 48,
+                "unique_count": {
+                  "value": 43
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 27,
+                "unique_count": {
+                  "value": 23
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "v2.9.0",
+          "doc_count": 513,
+          "install_result": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "installed",
+                "doc_count": 369,
+                "unique_count": {
+                  "value": 369
+                }
+              },
+              {
+                "key": "error",
+                "doc_count": 110,
+                "unique_count": {
+                  "value": 92
+                }
+              },
+              {
+                "key": "cancelled",
+                "doc_count": 34,
+                "unique_count": {
+                  "value": 30
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: auto-report
+objects:
+- apiVersion: batch/v1
+  kind: CronJob
+  metadata:
+    name: auto-report-morning-stats
+  spec:
+    suspend: ${{MORNING_STATS_CRON_SUSPEND}}
+    schedule: "${MORNING_STATS_CRON_TIME}"
+    jobTemplate:
+      spec:
+        ttlSecondsAfterFinished: ${{MORNING_STATS_CRON_TTL}}
+        template:
+          spec:
+            containers:
+            - name: auto-report
+              image: ${IMAGE_NAME}:${IMAGE_TAG}
+              imagePullPolicy: ${IMAGE_PULL_POLICY}
+              resources:
+                limits:
+                  memory: ${MEMORY_LIMIT}
+                  cpu: ${CPU_LIMIT}
+                requests:
+                  memory: ${MEMORY_REQUEST}
+                  cpu: ${CPU_REQUEST}
+              command:
+              - auto_report
+              env:
+              - name: LOGLEVEL
+                value: "${MORNING_STATS_LOGLEVEL}"
+              - name: OPENSEARCH_HOST
+                valueFrom:
+                  secretKeyRef:
+                    key: endpoint
+                    name: assisted-installer-elasticsearch
+              - name: OPENSEARCH_USERNAME
+                valueFrom:
+                  secretKeyRef:
+                    key: master_user_name
+                    name: elastic-master-credentials
+              - name: OPENSEARCH_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    key: master_user_password
+                    name: elastic-master-credentials
+              - name: SLACK_WEBHOOK_URL
+                valueFrom:
+                  secretKeyRef:
+                    key: ${MORNING_STATS_WEBHOOK_SECRET_KEY}
+                    name: ${MORNING_STATS_WEBHOOK_SECRET_NAME}
+            restartPolicy: OnFailure
+parameters:
+- name: IMAGE_NAME
+  value: quay.io/app-sre/auto-report
+- name: IMAGE_TAG
+  value: ''
+  required: true
+- name: IMAGE_PULL_POLICY
+  value: Always
+- name: MEMORY_LIMIT
+  value: 256Mi
+- name: CPU_LIMIT
+  value: 1
+- name: MEMORY_REQUEST
+  value: 128Mi
+- name: CPU_REQUEST
+  value: 10m
+- name: MORNING_STATS_WEBHOOK_SECRET_KEY
+  value: webhook_url
+- name: MORNING_STATS_WEBHOOK_SECRET_NAME
+  value: slack-webhook
+- name: MORNING_STATS_CRON_SUSPEND
+  value: "false"
+- name: MORNING_STATS_CRON_TIME
+  value: "0 7 * * *"
+- name: MORNING_STATS_CRON_TTL
+  value: 600
+- name: MORNING_STATS_LOGLEVEL
+  value: "INFO"

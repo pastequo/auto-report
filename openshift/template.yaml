@@ -63,7 +63,7 @@ parameters:
 - name: MEMORY_LIMIT
   value: 256Mi
 - name: CPU_LIMIT
-  value: 1
+  value: "1"
 - name: MEMORY_REQUEST
   value: 128Mi
 - name: CPU_REQUEST
@@ -77,6 +77,6 @@ parameters:
 - name: MORNING_STATS_CRON_TIME
   value: "0 7 * * *"
 - name: MORNING_STATS_CRON_TTL
-  value: 600
+  value: "600"
 - name: MORNING_STATS_LOGLEVEL
   value: "INFO"
